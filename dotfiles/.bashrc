@@ -105,8 +105,9 @@ alias ocaml='ledit ocaml'
 
 alias vol='amixer set Master'
 alias sus='pmi action suspend'
+alias doff='xset dpms force off'
 
 export PATH=/home/jianneng/applications/Python-2.7.3:/home/jianneng/applications/java/jdk1.6.0_45/bin:/home/jianneng/applications/hadoop/hadoop-1.0.4/bin:${PATH}:/home/jianneng/applications/eclipse:/home/jianneng/applications/Sublime\ Text\ 2
 
-export PS1="\w\n$ "
+export PS1="\[\e[1;32m\]\w\n\$\[\e[0m\] "
 
