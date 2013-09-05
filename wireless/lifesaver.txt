@@ -1,0 +1,13 @@
+http://ubuntuforums.org/showthread.php?t=1966860&page=4
+
+sudo modprobe -r iwlwifi
+sudo modprobe iwlwifi 11n_disable=1
+
+
+I think that tells us that the iwlwifi driver isn't ready for N speeds; I suppose that if the router is trying to negotiate an N connection and the card can't do it, the card gives up and does nothing. One thing I do know is it's better to work than not work!!
+
+To make this persistent, please do:
+sudo gedit /etc/modprobe.d/iwlwifi.conf
+
+A new empty file will open. Add one line:
+options iwlwifi 11n_disable=1
