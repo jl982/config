@@ -22,8 +22,9 @@ ifup wlan0
 #3
 disable ipv6
 #4
-/etc/init.d/NetworkManager stop
-/etc/init.d/wpa_supplicant stop
+sudo service network-manager stop
+sudo killall wpa_supplicant
+sudo service network-manager start
 After this, you will be able to ru nyour own wpa connection command with no fear of being deauthenticated by local choice due to the rogue daemon:
 wpa_supplicant -Dwext -iwlan0 -c[WPA conf file path]
 Then obtain network specific credentials and you'll be off and runings:
