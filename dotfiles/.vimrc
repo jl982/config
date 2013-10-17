@@ -19,8 +19,14 @@ map <S-Tab> gT
 
 set number
 set expandtab
-set ts=2
+set ts=4
+set shiftwidth=4
 set hlsearch
-"set smartindent
-" Indent/remove 2 spaces when pressing < or >
-set shiftwidth=2
+set smartindent
+
+set cursorline
+
+filetype plugin indent on
+" Use 2 spaces for ml and text files
+autocmd FileType ocaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType text setlocal shiftwidth=2 tabstop=2
