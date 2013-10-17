@@ -100,6 +100,7 @@ fi
 
 alias 'm=make'
 alias 'mc=make clean'
+alias 'x=exit'
 
 alias ocaml='rlwrap ocaml'
 
@@ -111,3 +112,7 @@ export PATH=/home/jianneng/applications/java/jdk1.6.0_45/bin:/home/jianneng/appl
 
 export PS1="\[\e[1;32m\]\w\n\$\[\e[0m\] "
 export EDITOR=vim
+
+# Hyperdex
+export PATH=/home/jianneng/Documents/research/os/install/bin:${PATH}
+export PKG_CONFIG_PATH=/home/jianneng/Documents/research/os/install/lib/pkgconfig
