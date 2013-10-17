@@ -1,0 +1,16 @@
+# Get source from http://ftp.uni-erlangen.de/pub/utilities/screen/screen-4.0.3.tar.gz and unpack
+
+# On CSUG account
+# Make /home/jl982/var/run directory
+./configure --prefix=/home/jl982 --with-socket-dir=/home/jl982/var/run/screen --with-pty-group=5 --with-sys-screenrc=/home/jl982/etc/screenrc
+sed -i -e "s%/usr/local/etc/screenrc%/home/jl982/etc/screenrc%" {etc,doc}/*
+
+# If sys/stropts.h is missing from /usr/include:
+# In process.c, pty.c, and screen.c
+//#ifdef SVR4
+//# include <sys/stropts.h>
+//#endif
+
+make
+make install
+install -m 644 etc/etcscreenrc ~/etc/screenrc
