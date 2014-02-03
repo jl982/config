@@ -11,6 +11,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id ssh-add
 
+# Focus does not follow mouse
+focus_follows_mouse no
+
 # Use Windows key as Mod 
 set $mod Mod4
 
@@ -33,6 +36,8 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
