@@ -98,21 +98,38 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+alias '..=cd ..'
+alias '...=cd ../..'
+alias '....=cd ../../..'
+alias '.....=cd ../../../..'
+alias '......=cd ../../../../..'
 alias 'm=make'
+alias 'mm=make -j 16'
 alias 'mc=make clean'
 alias 'x=exit'
+alias 'n=nautilus'
 
 alias ocaml='rlwrap ocaml'
 
 alias vol='amixer set Master'
+alias doff='xset dpms force off'
+alias doffl='gnome-screensaver-command -l && xset dpms force off'
 alias sus='gnome-screensaver-command -l && pmi action suspend'
-alias doff='gnome-screensaver-command -l && xset dpms force off'
+alias nmr='sudo service network-manager restart'
+alias ctc='/home/jianneng/Documents/config/caps_to_ctrl.sh'
+alias tk='tail /var/log/kern.log'
+alias vpn='/opt/cisco/anyconnect/bin/vpnui &'
 
-export PATH=/home/jianneng/applications/java/jdk1.6.0_45/bin:/home/jianneng/applications/hadoop/hadoop-1.0.4/bin:${PATH}:/home/jianneng/applications/eclipse:/home/jianneng/applications/Sublime\ Text\ 2
+export PATH=/home/jianneng/.opam/4.01.0/bin:/home/jianneng/applications/java/jdk1.7.0_45/bin:/home/jianneng/applications/hadoop/hadoop-1.0.4/bin:${PATH}:/home/jianneng/applications/eclipse:/home/jianneng/applications/Sublime\ Text\ 2
 
-export PS1="\[\e[1;32m\]\w\n\$\[\e[0m\] "
+export PS1="\[\e[1;32m\]\w (\t)\n$\[\e[0m\] "
 export EDITOR=vim
 
 # Hyperdex
 export PATH=/home/jianneng/Documents/research/os/install/bin:${PATH}
 export PKG_CONFIG_PATH=/home/jianneng/Documents/research/os/install/lib/pkgconfig
+
+# For now, for CS 3110 PS4
+export LD_LIBRARY_PATH=~/.opam/system/lib/stublibs/
+
+alias ed="rlwrap ed -p:"
