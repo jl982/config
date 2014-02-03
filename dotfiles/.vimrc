@@ -23,10 +23,20 @@ set ts=4
 set shiftwidth=4
 set hlsearch
 set smartindent
+set scrolloff=5
+"set mouse=a
 
 set cursorline
 
 filetype plugin indent on
-" Use 2 spaces for ml and text files
+" Use 2 spaces for certain files
 autocmd FileType ocaml setlocal shiftwidth=2 tabstop=2
 autocmd FileType text setlocal shiftwidth=2 tabstop=2
+autocmd FileType tex setlocal shiftwidth=2 tabstop=2
+
+" Hopefully I won't regret this
+set noswapfile
+set nobackup
+
+" To increment and decrement alpha wiht C-a and C-x
+"set nf=octal,hex,alpha
