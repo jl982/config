@@ -24,6 +24,8 @@ font -bitstream-*-*-r-*-*-*-100-*-*-*-*-*-*
 floating_modifier $mod 
 # start a terminal 
 bindsym $mod+Return exec i3-sensible-terminal
+# start nautilus
+bindsym $mod+x exec nautilus
 # kill focused window 
 bindsym $mod+Shift+Q kill
 # start dmenu (a program launcher) 
