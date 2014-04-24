@@ -1,3 +1,0 @@
-#!/usr/bin/sh
-
-sudo service network-manager stop && sudo service network-manager start
