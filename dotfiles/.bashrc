@@ -81,6 +81,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lh='ll | egrep " \.[^ /]+$"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -106,17 +107,17 @@ alias '......=cd ../../../../..'
 alias 'm=make'
 alias 'mm=make -j 16'
 alias 'mc=make clean'
-alias 'x=exit'
-alias 'n=nautilus'
 
 alias ocaml='rlwrap ocaml'
+alias csc='cs3110 compile'
+alias csr='rlwrap cs3110 run'
 
 alias vol='amixer set Master'
 alias doff='xset dpms force off'
 alias doffl='gnome-screensaver-command -l && xset dpms force off'
 alias sus='gnome-screensaver-command -l && pmi action suspend'
 alias nmr='sudo service network-manager restart'
-alias ctc='/home/jianneng/Documents/config/caps_to_ctrl.sh'
+alias xr='xrandr --output LVDS1 --auto && xrandr --output VGA1 --auto --right-of LVDS1'
 alias tk='tail /var/log/kern.log'
 alias vpn='/opt/cisco/anyconnect/bin/vpnui &'
 
@@ -128,6 +129,7 @@ export EDITOR=vim
 # Hyperdex
 export PATH=/home/jianneng/Documents/research/os/install/bin:${PATH}
 export PKG_CONFIG_PATH=/home/jianneng/Documents/research/os/install/lib/pkgconfig
+export PYTHONPATH=/home/jianneng/Documents/research/os/install/lib/python2.7/site-packages
 
 # For now, for CS 3110 PS4
 export LD_LIBRARY_PATH=~/.opam/system/lib/stublibs/
