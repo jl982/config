@@ -10,6 +10,7 @@
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id ssh-add
+exec --no-startup-id qq c # caps_to_ctrl
 
 # Focus does not follow mouse
 focus_follows_mouse no
@@ -19,7 +20,8 @@ set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
 # change font for readability 
-font -bitstream-*-*-r-*-*-*-100-*-*-*-*-*-*
+#font -bitstream-*-*-r-*-*-*-100-*-*-*-*-*-*
+font xft:consolas bold 9
 # Use Mouse+$mod to drag floating windows to their wanted position 
 floating_modifier $mod 
 # start a terminal 
@@ -139,11 +141,13 @@ bindsym $mod+r mode "resize"
 bar { 
     status_command i3status 
 } 
-# change colour to match root window 
-#client.background #342826 
-# changed these colours for readability 
-# class border backgr. text 
-client.focused #4c7899 #CA226B#ffffff 
-#client.unfocused #333333 #747170 #ffffff 
+
+# class                 border  backgr. text    indicator
+#client.focused          #859900 #859900 #fdf6e3 #2e9ef4
+#client.focused          #4c7899 #ca226b #ffffff
+#client.focused_inactive #268bd2 #268bd2 #fdf6e3 #484e50
+#client.unfocused        #333333 #93a1a1 #fdf6e3 #292d2e
+client.unfocused        #333333 #333333 #cccccc
+
 # Run unclutter when starting 
 exec --no-startup-id unclutter
