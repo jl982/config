@@ -1,4 +1,5 @@
 set t_Co=256
+syntax on
 colorscheme swombat256
 
 " pathogen.vim to manage runtimepath
@@ -69,12 +70,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeIgnore = ['\.o$', '\.lo$']
 
 function! SwitchSourceHeader()
-  "update!
   if (expand ("%:e") == "cc")
     find %:t:r.h
   else
     find %:t:r.cc
   endif
 endfunction
-
 nmap ,s :call SwitchSourceHeader()<CR>
+
+" Single leader for EasyMotion prefix
+map <Leader> <Plug>(easymotion-prefix)
+
+" * does not jump
+map * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
+
