@@ -6,10 +6,23 @@ colorscheme swombat256
 execute pathogen#infect()
 
 " Move 8
-"nnoremap <C-j> 8j
-"nnoremap <C-k> 8k
-"nnoremap <C-h> 8h
-"nnoremap <C-l> 8l
+nnoremap <C-j> 8j
+nnoremap <C-k> 8k
+nnoremap <C-h> 8h
+nnoremap <C-l> 8l
+inoremap <C-j> 8j
+inoremap <C-j> <Down><Down><Down><Down><Down><Down><Down><Down>
+inoremap <C-k> <Up><Up><Up><Up><Up><Up><Up><Up>
+inoremap <C-h> <Left><Left><Left><Left><Left><Left><Left><Left>
+inoremap <C-l> <Right><Right><Right><Right><Right><Right><Right><Right>
+vnoremap <C-j> 8j
+vnoremap <C-k> 8k
+vnoremap <C-h> 8h
+vnoremap <C-l> 8l
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
 
 nnoremap j gj
 nnoremap k gk
