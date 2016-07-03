@@ -104,10 +104,14 @@ alias '...=cd ../..'
 alias '....=cd ../../..'
 alias '.....=cd ../../../..'
 alias '......=cd ../../../../..'
+alias 'cp=cp -a'
 alias 'm=make'
-alias 'mm=make -j 16'
+alias 'mi=make && make install'
+alias 'mm=make -j 4'
+alias 'mmi=make -j 4 && make install'
 alias 'mc=make clean'
 
+alias xclip='xclip -selection c'
 alias ocaml='rlwrap ocaml'
 alias csc='cs3110 compile'
 alias csr='rlwrap cs3110 run'
@@ -115,23 +119,38 @@ alias csr='rlwrap cs3110 run'
 alias vol='amixer set Master'
 alias doff='xset dpms force off'
 alias doffl='gnome-screensaver-command -l && xset dpms force off'
-alias sus='gnome-screensaver-command -l && pmi action suspend'
+alias sus='gnome-screensaver-command -l && dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend'
 alias nmr='sudo service network-manager restart'
 alias xr='xrandr --output LVDS1 --auto && xrandr --output VGA1 --auto --right-of LVDS1'
+alias wperf='dd bs=1M count=512 if=/dev/zero of=test conv=fdatasync'
+alias rperf='sudo hdparm -tT /dev/sda2'
 alias tk='tail /var/log/kern.log'
-alias vpn='/opt/cisco/anyconnect/bin/vpnui &'
 
-export PATH=/home/jianneng/.opam/4.01.0/bin:/home/jianneng/applications/java/jdk1.7.0_45/bin:/home/jianneng/applications/hadoop/hadoop-1.0.4/bin:${PATH}:/home/jianneng/applications/eclipse:/home/jianneng/applications/Sublime\ Text\ 2
+export PATH=/home/jianneng/.opam/4.01.0/bin:/home/jianneng/Applications/java/bin:/home/jianneng/Applications/scala/bin:${PATH}
+export JAVA_HOME=/home/jianneng/Applications/java
+export SPARK_HOME=/home/jianneng/Documents/spark
+export MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
 
 export PS1="\[\e[1;32m\]\w (\t)\n$\[\e[0m\] "
 export EDITOR=vim
 
 # Hyperdex
-export PATH=/home/jianneng/Documents/research/os/install/bin:${PATH}
-export PKG_CONFIG_PATH=/home/jianneng/Documents/research/os/install/lib/pkgconfig
-export PYTHONPATH=/home/jianneng/Documents/research/os/install/lib/python2.7/site-packages
+#export PATH=/home/jianneng/Documents/wtf/install/bin:${PATH}
+#export PKG_CONFIG_PATH=/home/jianneng/Documents/wtf/install/lib/pkgconfig
+
+alias zhc='cd ~/Documents/wtf/zmisc/hc && hyperdex coordinator -f -l 127.0.0.1 -p 1982'
+alias zhd='cd ~/Documents/wtf/zmisc/hd && hyperdex daemon -f --listen=127.0.0.1 --listen-port=2012 --coordinator=127.0.0.1 --coordinator-port=1982 --data=.'
+alias zwc='cd ~/Documents/wtf/zmisc/wc && wtf coordinator -l 127.0.0.1 -p 1981 -f -D .'
+alias zwd1='cd ~/Documents/wtf/zmisc/wd/1 && wtf daemon -c 127.0.0.1 -P 1981 -f -D . -l 127.0.0.1 -p 1901 -M ./data/metadata'
+alias zwd2='cd ~/Documents/wtf/zmisc/wd/2 && wtf daemon -c 127.0.0.1 -P 1981 -f -D . -l 127.0.0.1 -p 1902 -M ./data/metadata'
+alias zwd3='cd ~/Documents/wtf/zmisc/wd/3 && wtf daemon -c 127.0.0.1 -P 1981 -f -D . -l 127.0.0.1 -p 1903 -M ./data/metadata'
+alias zwd4='cd ~/Documents/wtf/zmisc/wd/4 && wtf daemon -c 127.0.0.1 -P 1981 -f -D . -l 127.0.0.1 -p 1904 -M ./data/metadata'
 
 # For now, for CS 3110 PS4
 export LD_LIBRARY_PATH=~/.opam/system/lib/stublibs/
 
 alias ed="rlwrap ed -p:"
+
+# OPAM configuration
+. /home/jianneng/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+

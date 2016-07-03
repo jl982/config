@@ -10,7 +10,7 @@
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id ssh-add
-exec --no-startup-id qq c # caps_to_ctrl
+#exec --no-startup-id xflux -z 94403
 
 # Focus does not follow mouse
 focus_follows_mouse no
@@ -28,6 +28,8 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 # start nautilus
 bindsym $mod+x exec nautilus
+# toggle border pixels
+bindsym $mod+b border toggle
 # kill focused window 
 bindsym $mod+Shift+Q kill
 # start dmenu (a program launcher) 
@@ -42,6 +44,8 @@ bindsym $mod+l focus right
 
 bindsym $mod+Tab focus right
 bindsym $mod+Shift+Tab focus left
+bindsym $mod+grave focus down
+bindsym $mod+Shift+grave focus up
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -151,3 +155,5 @@ client.unfocused        #333333 #333333 #cccccc
 
 # Run unclutter when starting 
 exec --no-startup-id unclutter
+
+new_window none
