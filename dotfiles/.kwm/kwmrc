@@ -31,13 +31,13 @@ kwmc bindsym hyper-h window -f west
 */
 
 // Set default values for screen padding
-kwmc config padding 40 20 20 20
+kwmc config padding 0 0 0 0
 
 // Set default values for container gaps
-kwmc config gap 15 15
+kwmc config gap 0 20
 
 // Default tiling mode for Kwm (bsp | monocle | float)
-kwmc config tiling bsp
+kwmc config tiling float
 
 // Let Kwm listen for hotkeys
 kwmc config hotkeys on
@@ -49,7 +49,7 @@ kwmc config float-non-resizable on
 kwmc config lock-to-container on
 
 // Set focus-follows-mouse-mode to autoraise
-kwmc config focus-follows-mouse on
+kwmc config focus-follows-mouse off
 
 /* Focus-follows-mouse is temporarily disabled when
    a floating window has focus */
@@ -57,7 +57,7 @@ kwmc config standby-on-float on
 
 /* The mouse will automatically move to the center
    of the focused window */
-kwmc config mouse-follows-focus on
+kwmc config mouse-follows-focus off
 
 // Allow window focus to wrap-around
 kwmc config cycle-focus on
@@ -89,6 +89,7 @@ kwmc rule owner="iTerm2" properties={role="AXDialog"}
 
    kwmc rule owner="Steam" properties={float="true"}
    kwmc rule owner="Photoshop" properties={float="true"} */
+kwmc rule owner="Finder" properties={float="true"}
 
 /* The following command creates a rule that
    captures an application to the given screen,
@@ -97,14 +98,14 @@ kwmc rule owner="iTerm2" properties={role="AXDialog"}
    kwmc rule owner="iTunes" properties={display="1"} */
 
 // Enable border for focused window
-kwmc config border focused on
-kwmc config border focused size 2
+kwmc config border focused off
+kwmc config border focused size 1
 kwmc config border focused color 0xFFBDD322
 kwmc config border focused radius 6
 
 // Enable border for marked window
 kwmc config border marked on
-kwmc config border marked size 2
+kwmc config border marked size 1
 kwmc config border marked color 0xFFCC5577
 kwmc config border marked radius 6
 
@@ -116,13 +117,10 @@ kwmc mode prefix color 0xFF458588
 
 /*  Default Keybinds */
 // Activate prefix mode
-kwmc bindsym ctrl-s mode activate prefix
+kwmc bindsym ctrl-q mode activate prefix
 
 // Quit Kwm
 kwmc bindsym cmd+alt+ctrl-q quit
-
-// Launch iTerm2
-kwmc bindsym cmd-return exec open -na /Applications/iTerm2.app
 
 // Set Space Tiling Mode To BSP
 kwmc bindsym cmd+ctrl-a space -t bsp
@@ -190,9 +188,16 @@ kwmc bindsym ctrl+shift-h window -m west
 // Detach Marked Window And Reinsert At Focused Window
 kwmc bindsym ctrl+shift-x window -m mark
 
+// Launch Applications
+kwmc bindsym ctrl-1 exec open -a /Applications/chrome
+kwmc bindsym ctrl-2 exec open -a Terminal.app
+kwmc bindsym ctrl-3 exec open -a /Applications/intellij
+kwmc bindsym ctrl-4 exec open -a /Applications/sublime
+kwmc bindsym ctrl-5 exec open -a Finder.app
+
 // Move Focused Window To Space
-kwmc bindsym ctrl+alt-left window -m space left
-kwmc bindsym ctrl+alt-right window -m space right
+//kwmc bindsym ctrl+alt-left window -m space left
+//kwmc bindsym ctrl+alt-right window -m space right
 
 // Move Focused Window To Screen
 kwmc bindsym ctrl+alt-1 window -m display 0
@@ -222,6 +227,6 @@ kwmc bindsym prefix+shift-down space -p decrease bottom
 kwmc bindsym prefix+shift-p space -p decrease all
 
 // Autowrite
-kwmc bindsym cmd-7 write \
-kwmc bindsym cmd-8 write {
-kwmc bindsym cmd-9 write }
+//kwmc bindsym cmd-7 write \
+//kwmc bindsym cmd-8 write {
+//kwmc bindsym cmd-9 write }
