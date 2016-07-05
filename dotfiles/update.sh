@@ -7,3 +7,4 @@ cp ~/.screenrc $DIR
 cp ~/.vimrc $DIR
 
 cp -r ~/.i3 $DIR
+cp -r ~/.kwm $DIR
