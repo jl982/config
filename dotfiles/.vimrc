@@ -1,16 +1,11 @@
 set t_Co=256
 syntax on
-colorscheme swombat256
+colorscheme gruvbox
 
 " pathogen.vim to manage runtimepath
 execute pathogen#infect()
 
 " Move 8
-nnoremap <C-j> 8j
-nnoremap <C-k> 8k
-nnoremap <C-h> 8h
-nnoremap <C-l> 8l
-inoremap <C-j> 8j
 inoremap <C-j> <Down><Down><Down><Down><Down><Down><Down><Down>
 inoremap <C-k> <Up><Up><Up><Up><Up><Up><Up><Up>
 inoremap <C-h> <Left><Left><Left><Left><Left><Left><Left><Left>
@@ -26,6 +21,16 @@ inoremap <C-f> <Right>
 
 nnoremap j gj
 nnoremap k gk
+nnoremap <C-j> j
+nnoremap <C-k> k
+nnoremap <C-h> 8zh
+nnoremap <C-l> 8zl
+
+nnoremap <C-m> :set wrap!<CR>
+let @j=':%!python -m json.tool'
+let @l=':%s///n'
+let @k=':g!//d'
+let @d=':g//d'
 
 " Clear search buffer with ,/
 nmap <silent> ,/ :nohlsearch<CR>
@@ -46,6 +51,7 @@ map <Tab> gt
 map <S-Tab> gT
 
 set number
+set ignorecase
 set expandtab
 set ts=4
 set shiftwidth=4
@@ -61,6 +67,8 @@ set cursorline
 "set wildignore=*.swp,*.bak,*.pyc,*.class
 set splitright
 set splitbelow
+set wildmenu
+set lazyredraw
 
 filetype plugin indent on
 " Use 2 spaces for certain files
@@ -81,6 +89,7 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Ignore file extensions
 let NERDTreeIgnore = ['\.o$', '\.lo$']
+let g:NERDTreeWinSize=60
 
 function! SwitchSourceHeader()
   if (expand ("%:e") == "cc")
