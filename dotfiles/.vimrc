@@ -1,9 +1,10 @@
-set t_Co=256
-syntax on
-colorscheme gruvbox
-
 " pathogen.vim to manage runtimepath
 execute pathogen#infect()
+
+set t_Co=256
+set re=2
+syntax on
+colorscheme gruvbox
 
 " Move 8
 inoremap <C-j> <Down><Down><Down><Down><Down><Down><Down><Down>
@@ -53,8 +54,8 @@ map <S-Tab> gT
 set number
 set ignorecase
 set expandtab
-set ts=4
-set shiftwidth=4
+set ts=2
+set shiftwidth=2
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set hlsearch
 set incsearch     " show search matches as you type
